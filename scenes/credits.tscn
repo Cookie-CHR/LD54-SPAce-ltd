@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://bao5s24kn8qpa"]
+
+[ext_resource type="Script" path="res://Components/Background.gd" id="1_423tl"]
+[ext_resource type="Script" path="res://Components/general_scene_changer.gd" id="1_xxc27"]
+[ext_resource type="Texture2D" uid="uid://b2tu02r3uttdi" path="res://Images/panel_title.png" id="2_gf2cj"]
+[ext_resource type="Texture2D" uid="uid://bm167coy4emtp" path="res://Images/bg_tiles.jpg" id="2_w3675"]
+[ext_resource type="Script" path="res://Music/Music_Changer.gd" id="3_dn2m5"]
+[ext_resource type="Texture2D" uid="uid://cr7vrio6w8l41" path="res://Images/map_big.png" id="4_pc6ee"]
+[ext_resource type="Texture2D" uid="uid://c2ao8hiirsvj3" path="res://Images/sound_on.png" id="7_8l5rl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckc8x"]
+texture = ExtResource("2_w3675")
+texture_region_size = Vector2i(80, 80)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_45bsw"]
+tile_size = Vector2i(80, 80)
+sources/0 = SubResource("TileSetAtlasSource_ckc8x")
+
+[sub_resource type="LabelSettings" id="LabelSettings_dyh2m"]
+font_size = 64
+
+[sub_resource type="Theme" id="Theme_vuhen"]
+default_font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_3s42i"]
+font_size = 22
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xxc27")
+
+[node name="Title_back" type="Sprite2D" parent="."]
+position = Vector2(576, 120)
+texture = ExtResource("2_gf2cj")
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_45bsw")
+format = 2
+script = ExtResource("1_423tl")
+
+[node name="Label" type="Label" parent="."]
+offset_top = 70.0
+offset_right = 1153.0
+offset_bottom = 220.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_dyh2m")
+horizontal_alignment = 1
+
+[node name="Menu" type="Button" parent="."]
+offset_left = 29.0
+offset_top = 538.0
+offset_right = 501.0
+offset_bottom = 626.0
+theme = SubResource("Theme_vuhen")
+text = "Back to main menu"
+icon = ExtResource("4_pc6ee")
+flat = true
+
+[node name="Title" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("3_dn2m5")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 68.0
+offset_top = 266.0
+offset_right = 1078.0
+offset_bottom = 478.0
+text = "Made for Ludum Dare 54, whose theme was \"limited space\".
+This was made for Extra category, though, so instead of a weekend it actually took 2 whole weeks
+
+Game by Cookie_CHR
+Music by Kevin MacLeod (incompetech.com)
+Sounds by freesound.org"
+label_settings = SubResource("LabelSettings_3s42i")
+autowrap_mode = 2
+
+[node name="Mute" type="Button" parent="."]
+offset_left = 1035.0
+offset_top = 537.0
+offset_right = 1123.0
+offset_bottom = 625.0
+icon = ExtResource("7_8l5rl")
+flat = true

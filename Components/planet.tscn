@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://wy72xrwtrek0"]
+
+[ext_resource type="Script" path="res://Components/sprite_follow_mouse.gd" id="1_1lk5a"]
+[ext_resource type="Texture2D" uid="uid://ljtkplpv5okm" path="res://Images/Rock.png" id="2_8hn2a"]
+[ext_resource type="Script" path="res://Components/sprite__variations.gd" id="3_6q0s6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fgh8"]
+size = Vector2(80, 80)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_1lk5a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8hn2a")
+script = ExtResource("3_6q0s6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7fgh8")

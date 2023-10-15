@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcqe7738k3qwj"]
+
+[ext_resource type="Script" path="res://Components/planet_spawner.gd" id="1_5ujup"]
+
+[node name="Spawner" type="Button"]
+offset_right = 140.0
+offset_bottom = 70.0
+flat = true
+script = ExtResource("1_5ujup")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

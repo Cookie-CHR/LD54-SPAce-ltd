@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckw1xtbjh8ww3"]
+
+[ext_resource type="Script" path="res://Components/general_scene_changer.gd" id="1_do0t6"]
+[ext_resource type="Texture2D" uid="uid://bm167coy4emtp" path="res://Images/bg_tiles.jpg" id="2_k07c0"]
+[ext_resource type="Script" path="res://Components/Background.gd" id="2_uq73q"]
+[ext_resource type="Texture2D" uid="uid://br1a16wisvhv1" path="res://Images/play.png" id="3_cq5fk"]
+[ext_resource type="Texture2D" uid="uid://c2jt84cjjanl0" path="res://Images/credits.png" id="4_ja667"]
+[ext_resource type="Script" path="res://Music/Music_Changer.gd" id="5_5ahf7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckc8x"]
+texture = ExtResource("2_k07c0")
+texture_region_size = Vector2i(80, 80)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j64ai"]
+tile_size = Vector2i(80, 80)
+sources/0 = SubResource("TileSetAtlasSource_ckc8x")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lbbq6"]
+font_size = 64
+
+[sub_resource type="Theme" id="Theme_rbj1f"]
+default_font_size = 40
+
+[node name="Victory" type="Node2D"]
+script = ExtResource("1_do0t6")
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_j64ai")
+format = 2
+script = ExtResource("2_uq73q")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1153.0
+offset_bottom = 150.0
+text = "Congratulations,
+you won the game!"
+label_settings = SubResource("LabelSettings_lbbq6")
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+offset_left = 176.0
+offset_top = 279.0
+offset_right = 470.0
+offset_bottom = 367.0
+theme = SubResource("Theme_rbj1f")
+text = " Play again"
+icon = ExtResource("3_cq5fk")
+flat = true
+
+[node name="Credits" type="Button" parent="."]
+offset_left = 176.0
+offset_top = 378.0
+offset_right = 412.0
+offset_bottom = 466.0
+theme = SubResource("Theme_rbj1f")
+text = " Credits"
+icon = ExtResource("4_ja667")
+flat = true
+
+[node name="Title" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("5_5ahf7")
