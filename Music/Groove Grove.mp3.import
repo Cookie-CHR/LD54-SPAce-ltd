@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://by6kuid38lctm"
+path="res://.godot/imported/Groove Grove.mp3-97ca1ebfdd81c91bab08dc5680c93fe7.mp3str"
+
+[deps]
+
+source_file="res://Music/Groove Grove.mp3"
+dest_files=["res://.godot/imported/Groove Grove.mp3-97ca1ebfdd81c91bab08dc5680c93fe7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
